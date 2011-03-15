@@ -1,16 +1,44 @@
 MooseX-StoolPigeon
 
-The README is used to introduce the module and provide instructions on
-how to install the module, any machine dependencies it may have (for
-example C compilers and installed libraries) and any other information
-that should be provided before the module is installed.
+Create a test file from -- most likely -- another one at higher level.
 
-A README file is required for CPAN modules since CPAN extracts the README
-file from a module distribution so that people browsing the archive
-can use it to get an idea of the module's uses. It is usually a good idea
-to provide version information here so that people can decide whether
-fixes for the module are worth downloading.
+This module is meant to be used during refactoring sessions.
 
+For example, let there be a Foo L<Moose> class with 'bar' sub. This sub is covered with a test like:
+
+    use Test::More;
+    
+    my @cases = (
+        { stimulus => $whatever, expected => $whatever },
+        ...
+    );
+    
+    plan tests => scalar @cases;
+    
+    use Foo;
+    
+    my $foo = Foo->new;
+        is_deeply ( $foo->bar ( $case->{stimulus}, $case->{expected} );
+    }
+
+If for example 'bar' sub calls 'baz' sub (or if a set of 'bar' lines of code can be refactored into 'baz' sub)
+then one way to generate a test file at 'baz' boundary using 'bar' stimulus is:
+
+    ...
+    
+    plan tests => scalar @cases;
+    
+    use MooseX::StoolPigeon;
+    
+    my $foo = MooseX::StoolPigeon->new ({ mxsp_class => 'Foo', mxsp_sub => 'baz' });
+    
+    for my $case ( @cases ) {
+        is_deeply ( $foo->bar ( $case->{stimulus}, $case->{expected} );
+    }
+    
+    $foo->mxsp_to_test_file;
+
+Which creates by default t/baz.t test file.
 
 INSTALLATION
 
