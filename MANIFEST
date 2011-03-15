@@ -1,0 +1,26 @@
+.gitignore
+Changes
+MANIFEST
+Makefile.PL
+README
+lib/MooseX/StoolPigeon.pm
+t/00-load.t
+t/01-scalar.t
+t/01-scalar/Foo.pm
+t/01-scalar/expected.t
+t/01-scalar_sanity.t
+t/02-array.t
+t/02-array/Foo.pm
+t/02-array/expected.t
+t/02-array_sanity.t
+t/03-options.t
+t/03-options/Foo.pm
+t/03-options/expected.t
+t/03-options_sanity.t
+t/04-caseless.t
+t/04-caseless/Foo.pm
+t/04-caseless/expected.t
+t/05-file.t
+t/pod-coverage.t
+t/pod.t
+META.yml                                 Module meta-data (added by MakeMaker)

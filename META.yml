@@ -1,0 +1,25 @@
+--- #YAML:1.0
+name:               MooseX-StoolPigeon
+version:            0.01
+abstract:           Create a test file from a Moose class sub
+author:
+    - Xavier Caron <xav@cpan.org>
+license:            perl
+distribution_type:  module
+configure_requires:
+    ExtUtils::MakeMaker:  0
+build_requires:
+    File::Slurp:  9999.13
+    Test::Fatal:  0.003
+    Test::More:   0
+requires:
+    Data::Dumper::Simple:  0.11
+    Moose:                1.24
+no_index:
+    directory:
+        - t
+        - inc
+generated_by:       ExtUtils::MakeMaker version 6.56
+meta-spec:
+    url:      http://module-build.sourceforge.net/META-spec-v1.4.html
+    version:  1.4
