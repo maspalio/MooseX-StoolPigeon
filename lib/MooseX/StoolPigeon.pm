@@ -1,7 +1,6 @@
 package MooseX::StoolPigeon;
 
-use warnings;
-use strict;
+use Modern::Perl;
 
 use Data::Dumper::Simple; $Data::Dumper::Indent = $Data::Dumper::Sortkeys = $Data::Dumper::Purity = $Data::Dumper::Deepcopy = 1;
 use Moose;

@@ -13,6 +13,7 @@ WriteMakefile(
     PL_FILES            => {},
     PREREQ_PM => {
         'Data::Dumper::Simple' => 0.11,
+        'Modern::Perl'         => 1.03,
         'Moose'                => 1.24,
     },
     BUILD_REQUIRES => {

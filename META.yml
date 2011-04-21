@@ -14,7 +14,8 @@ build_requires:
     Test::More:   0
 requires:
     Data::Dumper::Simple:  0.11
-    Moose:                1.24
+    Modern::Perl:          1.03
+    Moose:                 1.24
 no_index:
     directory:
         - t
